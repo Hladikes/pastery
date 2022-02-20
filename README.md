@@ -15,6 +15,13 @@ With Pastery, you can store your favorite images, add keywords to them, and quic
 - Export / Import of all the images into JSON format, to your clipboard
 - Some quality of life improvements to make this website as quick as possible
 
+## ☄ Get stared
+Copy this JSON into clipboard
+```json
+[{"url":"https://cdn.discordapp.com/emojis/771029769268494378.webp?v=1","keywords":"smile pepe"}]
+```
+Open [**Pastery**](https://pastery.hldks.net/) and just hit `Ctrl+V` or `Cmd+V`. Isn't that cool ? ❤
+
 ## 🚩 Important info
 Pastery is not saving any of your image on any server. The way this web works, is that the links to your *memes* are stored in so called **LocalStorage** which is client-side storage (no sh\*t Sherlock, right). There are two reasons few this:
 - To save money on a server, which would essentially just store your memes 💰
@@ -27,6 +34,11 @@ Pastery is not saving any of your image on any server. The way this web works, i
 - Comments
 - Probably some kind of refactor. I am aware of that the code behind this website might not be perfect, but you know, we're still learning, right ?
 - Rewrite image cache with Svelte actions
+- Add PWA support
+- Add some sort of tutorial on the web
+
+## Seriously important info
+In order to run this locally, you need to have node enviroment installed, along with npm.
 
 ---
 
