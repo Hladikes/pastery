@@ -7,7 +7,7 @@ Everyone knows that feeling, of having a perfect image for some discussion or to
 
 ### **Well not anymore ❗**
 
-With Pastery, you can store your favorite images, add keywords to them, and quickly find them when they're needed. For example, you might have that one specific meme that you're sending regularly on Discord, so what you can do, is to click on the image, copy the image url, open [**Pastery**](https://pastery.hldks.net/) and just hit `Ctrl+V` or `Cmd+V`.
+With Pastery, you can store your favorite images, add keywords to them, and quickly find them when they're needed. For example, you might have that one specific meme that you're sending regularly on Discord, so what you can do, is to click on the image, copy the image url, open [**Pastery**](https://pastery.hldks.net/) and just hit `Ctrl+V` or `Cmd+V`. Then, if you want to use it later, just hover on your image, any you can either copy the original link, or you can open the preview, and copy the image istelf.
 
 ## 💯 Features
 - Add / Edit / Remove any image
