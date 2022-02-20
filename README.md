@@ -36,9 +36,16 @@ Pastery is not saving any of your image on any server. The way this web works, i
 - Rewrite image cache with Svelte actions
 - Add PWA support
 - Add some sort of tutorial on the web
+- Better mobile support, eh ? I guess ..?
 
 ## Seriously important info
-In order to run this locally, you need to have node enviroment installed, along with npm.
+In order to run this locally, you need to have node enviroment installed, alongside with with npm.
+
+First you need to install dependencies, required by this project. You can do so by `npm i` command.
+
+To run DEV server use `npm run dev`
+
+To build for a production use `npm run build`
 
 ---
 
