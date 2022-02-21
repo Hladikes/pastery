@@ -20,6 +20,9 @@ Copy this JSON into clipboard
 ```json
 [{"url":"https://cdn.discordapp.com/attachments/783097729530200094/899402138407534632/image0.png","keywords":"finding who asked"},{"url":"https://cdn.discordapp.com/attachments/822395486727962648/921219554477240350/20211217_025522.jpg","keywords":"opinion correct wrong"},{"url":"https://cdn.discordapp.com/emojis/771029769268494378.webp?v=1","keywords":"smile pepe"}]
 ```
+**OR** you can just copy this link for example `https://cdn.discordapp.com/emojis/771029769268494378.webp?v=1`
+
+
 Open [**Pastery**](https://pastery.hldks.net/) and just hit `Ctrl+V` or `Cmd+V`. Isn't that cool ? ❤
 
 ## 🚩 Important info
