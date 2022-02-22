@@ -13,12 +13,11 @@ export const links: Writable<Link[]> = writable(JSON.parse(localStorage.links ||
 
 // Prepending newly generated link object
 export const addLink = (url: string, keywords: string = '') => {
-  
   links.update((currentLinks) => { 
     const index = currentLinks.findIndex(link => link.url === url)
     if(index !== -1) {
       createToast({ delay: 1000, text: 'This URL already exists', icon: 'block', type: 'warning'})
-      currentLinks.unshift(currentLinks.splice(index,1)[0])
+      if(index !== 0) currentLinks.unshift(currentLinks.splice(index,1)[0])
       return currentLinks
     }
     return [{
