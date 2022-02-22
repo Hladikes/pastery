@@ -15,15 +15,17 @@ export const links: Writable<Link[]> = writable(JSON.parse(localStorage.links ||
 export const addLink = (url: string, keywords: string = '') => {
   
   links.update((currentLinks) => { 
-    if(currentLinks.find((link) => link.url === url)) {
-      createToast({ delay: 1000, text: 'Thir URL already exists', icon: 'block'  ,type: 'danger'})
-      return currentLinks;
+    const index = currentLinks.findIndex(link => link.url === url)
+    if(index !== -1) {
+      createToast({ delay: 1000, text: 'This URL already exists', icon: 'block', type: 'warning'})
+      currentLinks.unshift(currentLinks.splice(index,1)[0])
+      return currentLinks
     }
     return [{
       id: randomId(),
       url,
       keywords,
-    },...currentLinks];
+    }, ...currentLinks]
   })
 }
 
