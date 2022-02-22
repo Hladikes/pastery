@@ -6,7 +6,8 @@
     "build": "vite build",
     "serve": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
-    "lint": "eslint src/**/*.ts src/**/*.svelte"
+    "lint": "eslint src/**/*.ts src/**/*.svelte",
+    "lint:fix": "eslint --fix src/**/*.ts src/**/*.svelte"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.11",

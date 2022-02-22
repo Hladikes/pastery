@@ -13,7 +13,8 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-unresolved': 'off',
     'no-console': 'off',
-    'linebreak-style': 'off'
+    'linebreak-style': 'off',
+    'import/no-extraneous-dependencies': 'off'
   },
   "globals": {
     "window": true,

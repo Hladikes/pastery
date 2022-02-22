@@ -12,17 +12,23 @@ export type Link = {
 export const links: Writable<Link[]> = writable(JSON.parse(localStorage.links || '[]'))
 
 // Prepending newly generated link object
-export const addLink = (url: string, keywords: string = '') => {
-  // check if it's at least valid starting URL
-  if (!/^(http[s]?:\/\/)|(data).*/.test(url)) return createToast({ delay: 1000, text: 'Invalid URL', icon: 'block', type: 'danger'})
+export const addLink = (url: string, keywords: string = ''): void => {
+  // Check if it's at least valid starting URL
+  if (!/^(http[s]?:\/\/)|(data).*/.test(url)) {
+    return createToast({
+      delay: 1000, text: 'Invalid URL', icon: 'block', type: 'danger',
+    })
+  }
 
-  links.update((currentLinks) => { 
-    // check if link already exists
-    const index = currentLinks.findIndex(link => link.url === url)
+  links.update((currentLinks) => {
+    // Check if link already exists
+    const index = currentLinks.findIndex((link) => link.url === url)
     if (index !== -1) {
-      createToast({ delay: 1000, text: 'This URL already exists', icon: 'block', type: 'warning'})
-      //if it's not at the start, top it
-      if (index !== 0) currentLinks.unshift(currentLinks.splice(index,1)[0])
+      createToast({
+        delay: 1000, text: 'This URL already exists', icon: 'block', type: 'warning',
+      })
+      // If it's not at the start, top it
+      if (index !== 0) currentLinks.unshift(currentLinks.splice(index, 1)[0])
       return currentLinks
     }
     return [{
@@ -31,27 +37,27 @@ export const addLink = (url: string, keywords: string = '') => {
       keywords,
     }, ...currentLinks]
   })
+
+  return null
 }
 
 export const deleteLink = (id: string) => {
-  links.update((currentLinks) => currentLinks.filter(link => link.id !== id))
+  links.update((currentLinks) => currentLinks.filter((link) => link.id !== id))
 }
 
-export const deleteAllLinks = () => {
+export const deleteAllLinks = (): void => {
   links.set([])
 }
 
 // Not the most efficient way to change only one link object
-export const updateKeywords = (id: string, keywords: string) => {
-  links.update((currentLinks) => {
-    return currentLinks.map((link) => {
-      if (link.id === id) {
-        link.keywords = keywords
-      }
-      
-      return link
-    })
-  })
+export const updateKeywords = (id: string, keywords: string): void => {
+  links.update((currentLinks) => currentLinks.map((link) => {
+    if (link.id === id) {
+      Object.assign(link, { keywords })
+    }
+
+    return link
+  }))
 }
 
 // Save all the links to the LocalStorage, whenever some of the links changes

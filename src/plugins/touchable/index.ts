@@ -1,44 +1,44 @@
 export function handlePressStateChanges(el: HTMLElement, cb: (state: boolean) => any) {
-  let _isTouchDevice: boolean = false
-  let _isDeviceTypeSet: boolean = false
+  let isTouchDevice: boolean = false
+  let isDeviceTypeSet: boolean = false
 
-  const _mouseenter = () => {
-    if (_isDeviceTypeSet && _isTouchDevice) return
+  const mouseenter = () => {
+    if (isDeviceTypeSet && isTouchDevice) return
     // console.log('mouseenter')
-    _isTouchDevice = false
-    _isDeviceTypeSet = true
+    isTouchDevice = false
+    isDeviceTypeSet = true
     cb(true)
   }
 
-  const _mouseleave = () => {
-    if (_isDeviceTypeSet && _isTouchDevice) return
+  const mouseleave = () => {
+    if (isDeviceTypeSet && isTouchDevice) return
     // console.log('mouseleave')
     cb(false)
   }
 
-  const _touchstart = () => {
-    if (_isDeviceTypeSet && !_isTouchDevice) return
+  const touchstart = () => {
+    if (isDeviceTypeSet && !isTouchDevice) return
     // console.log('touchstart')
-    _isDeviceTypeSet = true
-    _isTouchDevice = true
+    isDeviceTypeSet = true
+    isTouchDevice = true
     cb(true)
   }
 
-  const _touchend = () => {
-    if (_isDeviceTypeSet && !_isTouchDevice) return
+  const touchend = () => {
+    if (isDeviceTypeSet && !isTouchDevice) return
     // console.log('touchend')
     cb(false)
   }
 
-  el.addEventListener('mouseenter', _mouseenter, { passive: true })
-  el.addEventListener('mouseleave', _mouseleave, { passive: true })
-  el.addEventListener('touchstart', _touchstart, { passive: true })
-  el.addEventListener('touchend', _touchend, { passive: true })
+  el.addEventListener('mouseenter', mouseenter, { passive: true })
+  el.addEventListener('mouseleave', mouseleave, { passive: true })
+  el.addEventListener('touchstart', touchstart, { passive: true })
+  el.addEventListener('touchend', touchend, { passive: true })
 
   return () => {
-    el.removeEventListener('mouseenter', _mouseenter)
-    el.removeEventListener('mouseleave', _mouseenter)
-    el.removeEventListener('touchstart', _touchstart)
-    el.removeEventListener('touchend', _touchend)
+    el.removeEventListener('mouseenter', mouseenter)
+    el.removeEventListener('mouseleave', mouseenter)
+    el.removeEventListener('touchstart', touchstart)
+    el.removeEventListener('touchend', touchend)
   }
 }

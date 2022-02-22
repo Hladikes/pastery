@@ -1,6 +1,6 @@
 import { writable, get } from 'svelte/store'
-import { links } from '@/store/links'
 import type { Writable } from 'svelte/store'
+import { links } from '@/store/links'
 import type { Link } from './links'
 
 export const selections: Writable<Set<Link>> = writable(new Set())
