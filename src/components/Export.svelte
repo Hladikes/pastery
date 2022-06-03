@@ -11,7 +11,11 @@
   import { copy } from '@/plugins/clipboard'
 
   const exportLinks = () => {
-    createToast({ text: 'Links exported to the clipboard', type: 'success', delay: 1000, icon: 'content_copy' })
+    createToast({ 
+      text: 'Links exported to the clipboard', 
+      type: 'success', 
+      icon: 'content_copy',
+    })
 
     const linksToExport = $links.map(({ url, keywords }) => ({
       url, 

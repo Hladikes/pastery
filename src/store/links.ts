@@ -17,7 +17,9 @@ export const addLink = (url: string, keywords: string = ''): void => {
   // Check if it's at least valid starting URL
   if (!/^(http[s]?:\/\/)|(data).*/.test(url)) {
     return createToast({
-      delay: 1000, text: 'Invalid URL', icon: 'block', type: 'danger',
+      text: 'Invalid URL',
+      icon: 'block',
+      type: 'danger',
     })
   }
 
@@ -26,7 +28,9 @@ export const addLink = (url: string, keywords: string = ''): void => {
     const index = currentLinks.findIndex((link) => link.url === url)
     if (index !== -1) {
       createToast({
-        delay: 1000, text: 'This URL already exists', icon: 'block', type: 'warning',
+        text: 'This URL already exists',
+        icon: 'block',
+        type: 'warning',
       })
 
       // If it's not at the start, top it

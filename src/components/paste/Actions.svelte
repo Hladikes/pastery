@@ -26,7 +26,12 @@
   // Copy link to the clipboard
   const copyLink = async () => {
     copy(link.url)
-    createToast({ delay: 1500, text: 'Link copied successfuly', icon: 'link', type: 'success' })
+    createToast({ 
+      delay: 1500, 
+      text: 'Link copied successfuly', 
+      icon: 'link', 
+      type: 'success',
+    })
   }
 
   // Here is an example, of how can we hook to any confirmation
@@ -39,7 +44,11 @@
       .then(yes => {
         if (!yes) return
         deleteLink(link.id)
-        createToast({ delay: 1000, text: 'Paste was deleted', icon: 'delete', type: 'success' })
+        createToast({
+          text: 'Paste was deleted', 
+          icon: 'delete', 
+          type: 'success',
+        })
       })
   }
 </script>

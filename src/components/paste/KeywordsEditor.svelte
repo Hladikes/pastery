@@ -18,7 +18,9 @@
     clearInterval(editTimeoutId)
     editTimeoutId = setTimeout(() => {
       updateKeywords(link.id, ev.target.value)
-      createToast({ type: 'info', text: 'Keywords were updated', icon: 'info', delay: 1000 })
+      createToast({
+        text: 'Keywords were updated',
+      })
     }, 500)
   }
 </script>

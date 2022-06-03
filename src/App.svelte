@@ -47,7 +47,12 @@
           )
 
           if (!isDataValid) {
-            return createToast({ type: 'danger', icon: 'error', text: 'Invalid data :(', delay: 1500 })
+            return createToast({
+              type: 'danger', 
+              icon: 'error', 
+              text: 'Invalid data :(', 
+              delay: 1500,
+            })
           }
 
           arrayOfLinks.reverse().forEach(({ url, keywords }) => {
