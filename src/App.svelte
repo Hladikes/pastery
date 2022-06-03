@@ -67,9 +67,7 @@
     // needing to click on a search bar.
     // If the escape key is pressed, the current search query will be erased
     document.addEventListener('keydown', (ev: KeyboardEvent) => {
-      if (!($popupVisible || ev.ctrlKey || ev.key === 'Backspace' || ev.key === 'Escape' || ev.key?.length === 1)) {
-        return
-      }
+      if ($popupVisible || ev.ctrlKey) return
 
       input?.focus()
 
