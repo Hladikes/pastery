@@ -3,7 +3,6 @@
   import { links, addLink } from '@/store/links'
   import Card from '@/components/paste/Card.svelte'
   import Footer from '@/components/Footer.svelte'
-  import Export from '@/components/Export.svelte'
   import PastesManager from '@/components/PastesManager.svelte'
   import Toast, { createToast } from '@/plugins/toast/Toast.svelte'
   import Confirm from '@/plugins/confirm/Confirm.svelte'
@@ -37,11 +36,11 @@
       parseAsJSON(data)
         .then((arrayOfLinks: Array<{ url: string, keywords: string }>) => {
           const isDataValid = (
-            Array.isArray(arrayOfLinks)
-            && arrayOfLinks.every((item) => {
+            Array.isArray(arrayOfLinks) &&
+            arrayOfLinks.every((item) => {
               return (
-                item?.url?.constructor === String
-                && item?.keywords?.constructor === String
+                item?.url?.constructor === String &&
+                item?.keywords?.constructor === String
               )
             })
           )
@@ -68,10 +67,15 @@
     // needing to click on a search bar.
     // If the escape key is pressed, the current search query will be erased
     document.addEventListener('keydown', (ev: KeyboardEvent) => {
-      if ($popupVisible || ev.ctrlKey) return
+      if (!($popupVisible || ev.ctrlKey || ev.key === 'Backspace' || ev.key === 'Escape' || ev.key?.length === 1)) {
+        return
+      }
+
       input?.focus()
 
-      if (ev.key === 'Escape') searchKeywords = ''
+      if (ev.key === 'Escape') {
+        searchKeywords = ''
+      }
     })
   })
 </script>
