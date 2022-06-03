@@ -9,7 +9,7 @@
 </script>
 
 <div 
-  transition:fly={{ x: -100, y: -100, duration: 300 }}
+  
   on:click={ () => toggleSelection(link) }
   class="inset-0 absolute border-4 rounded-xl { selected ? 'border-accent bg-accent bg-opacity-50' : 'border-transparent' }">
 
@@ -21,7 +21,7 @@
 
 </div>
 
-<style  lang="postcss">
+<style lang="postcss">
   .class-too-long-to-handle {
     @apply w-16 h-16 bg-primary-dark absolute -top-1 -left-1 rounded-br-full shadow-xl border-b-4 border-r-4;
   }

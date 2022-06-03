@@ -48,15 +48,19 @@
     <p class="m-4 text-red-500 text-xl font-medium">Could not load the image :(</p>
   {/if}
 
-  {#if $isSelectionModeOn}
+  <div 
+    class="transition-opacity {$isSelectionModeOn ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}">
     <Selector {link} />
-  {:else}
+  </div>
+
+  <div 
+    class="transition-opacity {$isSelectionModeOn ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto'}">
     <Actions 
       {isImageValid}
       {link} 
       on:edit={ () => isEditorVisible = true }
       on:expand={ () => isPreviewVisible = true } />
-  {/if}  
+  </div>
 </div>
   
 
