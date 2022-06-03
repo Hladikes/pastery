@@ -23,6 +23,7 @@ export const addLink = (url: string, keywords: string = ''): void => {
   links.update((currentLinks) => {
     // Check if link already exists
     const index = currentLinks.findIndex((link) => link.url === url)
+    
     if (index !== -1) {
       createToast({
         delay: 1000, text: 'This URL already exists', icon: 'block', type: 'warning',
@@ -32,7 +33,7 @@ export const addLink = (url: string, keywords: string = ''): void => {
       if (index !== 0) {
         currentLinks.unshift(currentLinks.splice(index, 1)[0])
       }
-      
+
       return currentLinks
     }
     return [{
