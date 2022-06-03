@@ -1,4 +1,5 @@
-import { Writable, writable } from 'svelte/store'
+import { writable } from 'svelte/store'
+import type { Writable } from 'svelte/store'
 import { randomId } from '@/plugins/util'
 import { createToast } from '@/plugins/toast/Toast.svelte'
 
@@ -16,7 +17,9 @@ export const addLink = (url: string, keywords: string = ''): void => {
   // Check if it's at least valid starting URL
   if (!/^(http[s]?:\/\/)|(data).*/.test(url)) {
     return createToast({
-      delay: 1000, text: 'Invalid URL', icon: 'block', type: 'danger',
+      text: 'Invalid URL',
+      icon: 'block',
+      type: 'danger',
     })
   }
 
@@ -26,7 +29,9 @@ export const addLink = (url: string, keywords: string = ''): void => {
     
     if (index !== -1) {
       createToast({
-        delay: 1000, text: 'This URL already exists', icon: 'block', type: 'warning',
+        text: 'This URL already exists',
+        icon: 'block',
+        type: 'warning',
       })
 
       // If it's not at the start, top it
@@ -36,6 +41,7 @@ export const addLink = (url: string, keywords: string = ''): void => {
 
       return currentLinks
     }
+
     return [{
       id: randomId(),
       url,
@@ -46,7 +52,7 @@ export const addLink = (url: string, keywords: string = ''): void => {
   return null
 }
 
-export const deleteLink = (id: string) => {
+export const deleteLink = (id: string): void => {
   links.update((currentLinks) => currentLinks.filter((link) => link.id !== id))
 }
 

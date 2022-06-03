@@ -3,7 +3,6 @@
   import { links, addLink } from '@/store/links'
   import Card from '@/components/paste/Card.svelte'
   import Footer from '@/components/Footer.svelte'
-  import Export from '@/components/Export.svelte'
   import PastesManager from '@/components/PastesManager.svelte'
   import Toast, { createToast } from '@/plugins/toast/Toast.svelte'
   import Confirm from '@/plugins/confirm/Confirm.svelte'
@@ -37,17 +36,22 @@
       parseAsJSON(data)
         .then((arrayOfLinks: Array<{ url: string, keywords: string }>) => {
           const isDataValid = (
-            Array.isArray(arrayOfLinks)
-            && arrayOfLinks.every((item) => {
+            Array.isArray(arrayOfLinks) &&
+            arrayOfLinks.every((item) => {
               return (
-                item?.url?.constructor === String
-                && item?.keywords?.constructor === String
+                item?.url?.constructor === String &&
+                item?.keywords?.constructor === String
               )
             })
           )
 
           if (!isDataValid) {
-            return createToast({ type: 'danger', icon: 'error', text: 'Invalid data :(', delay: 1500 })
+            return createToast({
+              type: 'danger', 
+              icon: 'error', 
+              text: 'Invalid data :(', 
+              delay: 1500,
+            })
           }
 
           arrayOfLinks.reverse().forEach(({ url, keywords }) => {
@@ -63,17 +67,22 @@
     // needing to click on a search bar.
     // If the escape key is pressed, the current search query will be erased
     document.addEventListener('keydown', (ev: KeyboardEvent) => {
-      if ($popupVisible || ev.ctrlKey) return
+      if (!($popupVisible || ev.ctrlKey || ev.key === 'Backspace' || ev.key === 'Escape' || ev.key?.length === 1)) {
+        return
+      }
+
       input?.focus()
 
-      if (ev.key === 'Escape') searchKeywords = ''
+      if (ev.key === 'Escape') {
+        searchKeywords = ''
+      }
     })
   })
 </script>
 
 <main class="flex flex-col items-center  min-h-screen bg-primary select-none">
   <div class="mt-8 p-4 w-full sm:w-3/5 xl:w-2/5">
-    <h1 class="text-7xl text-white font-medium select-none">
+    <h1 class="md:text-7xl text-5xl text-white font-medium select-none">
       <span class="text-accent">Paste</span>ry
     </h1>
     <h4 class="text-white text-opacity-30 my-2 ml-1 select-none">Shitreacting was never this quick</h4>
@@ -82,7 +91,7 @@
       bind:value={ searchKeywords }
       type="text" 
       placeholder="Search"
-      class="bg-secondary bg-opacity-10 shadow-xl text-white text-3xl font-medium placeholder-gray-300  p-5 w-full  rounded-xl transition-colors focus:outline-none focus:bg-opacity-20">
+      class="bg-secondary bg-opacity-5 shadow-xl text-white md:text-3xl text-2xl font-medium placeholder-gray-300  md:p-5 p-4 w-full  rounded-xl transition-colors focus:outline-none focus:bg-opacity-10">
   </div>
 
   <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4 w-full p-4">
