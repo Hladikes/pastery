@@ -26,7 +26,7 @@ export const addLink = (url: string, keywords: string = ''): void => {
   links.update((currentLinks) => {
     // Check if link already exists
     const index = currentLinks.findIndex((link) => link.url === url)
-    
+
     if (index !== -1) {
       createToast({
         text: 'This URL already exists',
