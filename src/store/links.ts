@@ -62,13 +62,23 @@ export const deleteAllLinks = (): void => {
 
 // Not the most efficient way to change only one link object
 export const updateKeywords = (id: string, keywords: string): void => {
-  links.update((currentLinks) => currentLinks.map((link) => {
-    if (link.id === id) {
-      Object.assign(link, { keywords })
-    }
+  // links.update((currentLinks) => currentLinks.map((link) => {
+  //   if (link.id === id) {
+  //     Object.assign(link, { keywords })
+  //   }
 
-    return link
-  }))
+  //   return link
+  // }))
+
+  links.update((currentLinks) => {
+    const foundItem = currentLinks.find(item => item.id === id)
+
+    if (foundItem) {
+      foundItem.keywords = keywords
+    }
+    
+    return currentLinks
+  })
 }
 
 // Save all the links to the LocalStorage, whenever some of the links changes
