@@ -1,4 +1,5 @@
-import { Writable, writable } from 'svelte/store'
+import { writable } from 'svelte/store'
+import type { Writable } from 'svelte/store'
 import { randomId } from '@/plugins/util'
 import { createToast } from '@/plugins/toast/Toast.svelte'
 
@@ -32,9 +33,10 @@ export const addLink = (url: string, keywords: string = ''): void => {
       if (index !== 0) {
         currentLinks.unshift(currentLinks.splice(index, 1)[0])
       }
-      
+
       return currentLinks
     }
+
     return [{
       id: randomId(),
       url,
@@ -45,7 +47,7 @@ export const addLink = (url: string, keywords: string = ''): void => {
   return null
 }
 
-export const deleteLink = (id: string) => {
+export const deleteLink = (id: string): void => {
   links.update((currentLinks) => currentLinks.filter((link) => link.id !== id))
 }
 
