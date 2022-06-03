@@ -1,6 +1,7 @@
 <script lang="ts" context="module">
   import type { ToastOptions } from './types'
-  import { writable, type Writable } from 'svelte/store'
+  import { writable } from 'svelte/store'
+  import type { Writable } from 'svelte/store'
 
   const toastOptions: Writable<ToastOptions> = writable({})
   const toastVisible = writable(false)
@@ -13,14 +14,13 @@
       type: options.type || 'info',
       icon: options.icon || 'info',
       text: options.text || 'No text',
-      delay: options.delay || 1000,
     })
 
     clearTimeout(intervalId)
     
     intervalId = setTimeout(() => {
       toastVisible.set(false)
-    }, options.delay)
+    }, options.delay || 1000)
   }
 </script>
 
