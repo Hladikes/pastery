@@ -27,8 +27,12 @@ export const addLink = (url: string, keywords: string = ''): void => {
       createToast({
         delay: 1000, text: 'This URL already exists', icon: 'block', type: 'warning',
       })
+
       // If it's not at the start, top it
-      if (index !== 0) currentLinks.unshift(currentLinks.splice(index, 1)[0])
+      if (index !== 0) {
+        currentLinks.unshift(currentLinks.splice(index, 1)[0])
+      }
+      
       return currentLinks
     }
     return [{
