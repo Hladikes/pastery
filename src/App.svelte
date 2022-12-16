@@ -85,11 +85,11 @@
     </h1>
     <h4 class="text-white text-opacity-30 my-2 ml-1 select-none">Shitreacting was never this quick</h4>
     <input 
-      bind:this={ input } 
-      bind:value={ searchKeywords }
+      bind:this={input} 
+      bind:value={searchKeywords}
       type="text" 
       placeholder="Search"
-      class="bg-secondary bg-opacity-5 shadow-xl text-white md:text-3xl text-2xl font-medium placeholder-gray-300  md:p-5 p-4 w-full  rounded-xl transition-colors focus:outline-none focus:bg-opacity-10">
+      class="bg-secondary/20 text-white border-2 border-transparent md:text-3xl text-2xl font-medium placeholder-gray-300  md:p-5 p-4 w-full  rounded-xl transition-colors focus:outline-none focus:bg-accent/20 focus:border-accent/40">
   </div>
 
   <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4 w-full p-4">
