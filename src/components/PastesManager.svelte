@@ -101,11 +101,13 @@
       class="py-1 px-3 select-none rounded-lg ml-auto text-lg font-bold text-red-400 hover:bg-red-500 hover:bg-opacity-20">Cancel</button>
   </div>
 {:else}
-  <button 
-    transition:scale
-    on:click={() => isSelectionModeOn.set(true)}
-    class="fixed top-5 right-5 select-none py-3 px-4 text-gray-300 bg-primary rounded-lg shadow-sm shadow-primary flex items-center space-x-2  hover:text-accent">
-    <i class="material-icons-round">format_list_bulleted</i>
-    <span class="font-bold text-xl">Edit</span>
-  </button>
+  {#if $links.length > 0}
+    <button 
+      transition:scale
+      on:click={() => isSelectionModeOn.set(true)}
+      class="fixed top-5 right-5 select-none py-3 px-4 text-gray-300 bg-primary rounded-lg shadow-sm shadow-primary flex items-center space-x-2  hover:text-accent">
+      <i class="material-icons-round">format_list_bulleted</i>
+      <span class="font-bold text-xl">Edit</span>
+    </button>
+  {/if}
 {/if}
