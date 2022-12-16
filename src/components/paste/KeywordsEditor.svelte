@@ -23,9 +23,11 @@
       })
     }, 500)
   }
+
+  
 </script>
 
-<div class="bg-primary flex flex-col shadow-xl p-6 h-2/3 w-2/3 lg:w-1/3  rounded-lg pointer-events pointer-events-auto">
+<div class="bg-primary flex flex-col shadow-xl p-5 h-1/2 w-2/3 lg:w-1/3  rounded-lg pointer-events pointer-events-auto">
   <h1 class="text-white text-4xl font-semibold mb-5 select-none">Keywords</h1>
   <h3 class="text-white text-opacity-70 text-lg mb-5 select-none">
     These keywords will help you later with finding the perfect reaction for your conversation

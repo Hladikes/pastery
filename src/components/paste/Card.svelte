@@ -37,12 +37,12 @@
 
 <div 
   in:scale={{ duration: 175 }} 
-  class="bg-primary-dark shadow-lg rounded-xl h-56 relative overflow-hidden cursor-pointer">
+  class="bg-primary-dark shadow-lg rounded-lg h-56 relative overflow-hidden cursor-pointer">
   
   {#if isImageValid}
     <div 
-      bind:this={ imageContainer }
-      class="{ isImageLoaded ? 'opacity-1' : 'opacity-0' } h-full w-full absolute transition-opacity">
+      bind:this={imageContainer}
+      class="{isImageLoaded ? 'opacity-1' : 'opacity-0'} h-full w-full absolute transition-opacity">
     </div>
   {:else}
     <p class="m-4 text-red-500 text-xl font-medium">Could not load the image :(</p>

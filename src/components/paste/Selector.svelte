@@ -9,10 +9,10 @@
 
 <div 
   on:click={() => toggleSelection(link)}
-  class="inset-0 absolute border-4 rounded-xl {selected ? 'border-accent bg-accent bg-opacity-50' : 'border-transparent'}">
+  class="inset-0 absolute border-4 rounded-lg {selected ? 'border-accent bg-accent bg-opacity-60 backdrop-blur-sm' : 'border-transparent'}">
 
   <div class="class-too-long-to-handle {selected ? 'border-accent' : 'border-transparent'}">
-    <i class="material-icons-round mt-3 ml-3 {selected ? 'text-accent' : 'text-gray-200 text-opacity-50'}">
+    <i class="material-icons-round mt-3 ml-3 {selected ? 'text-accent' : 'text-gray-100/70'}">
       {selected ? 'check_box' : 'check_box_outline_blank'}
     </i>
   </div>
