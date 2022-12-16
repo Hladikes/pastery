@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { fly } from 'svelte/transition'
   import { toggleSelection, selections } from '@/store/selection'
   import type { Link } from '@/store/links'
 
@@ -9,13 +8,12 @@
 </script>
 
 <div 
-  
-  on:click={ () => toggleSelection(link) }
-  class="inset-0 absolute border-4 rounded-xl { selected ? 'border-accent bg-accent bg-opacity-50' : 'border-transparent' }">
+  on:click={() => toggleSelection(link)}
+  class="inset-0 absolute border-4 rounded-xl {selected ? 'border-accent bg-accent bg-opacity-50' : 'border-transparent'}">
 
-  <div class="class-too-long-to-handle { selected ? 'border-accent' : 'border-transparent' }">
-    <i class="material-icons-round mt-3 ml-3 { selected ? 'text-accent' : 'text-gray-200 text-opacity-50' }">
-      { selected ? 'check_box' : 'check_box_outline_blank' }
+  <div class="class-too-long-to-handle {selected ? 'border-accent' : 'border-transparent'}">
+    <i class="material-icons-round mt-3 ml-3 {selected ? 'text-accent' : 'text-gray-200 text-opacity-50'}">
+      {selected ? 'check_box' : 'check_box_outline_blank'}
     </i>
   </div>
 

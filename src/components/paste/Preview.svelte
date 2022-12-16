@@ -5,7 +5,7 @@
 </script>
 
 <img 
-  src={ link.url } 
-  alt={ link.url } 
+  src={link.url} 
+  alt={link.url} 
   style="max-height: 80vh; min-height: 30vh;"
   class="pointer-events-auto select-none">

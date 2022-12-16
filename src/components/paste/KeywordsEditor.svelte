@@ -31,9 +31,9 @@
     These keywords will help you later with finding the perfect reaction for your conversation
   </h3>
   <textarea 
-    bind:this={ keywordsTextarea }
-    value={ link.keywords }
-    on:input={ editKeywords }
+    bind:this={keywordsTextarea}
+    value={link.keywords}
+    on:input={editKeywords}
     placeholder="angery danger magic duck ..."
     class="bg-secondary rounded-lg bg-opacity-10 text-white shadow-lg border border-black border-opacity-20 resize-none focus:outline-none p-3 text-3xl flex-1"></textarea>
 </div>

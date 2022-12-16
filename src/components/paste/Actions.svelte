@@ -54,28 +54,28 @@
 </script>
 
 <div 
-  bind:this={ actionsEl }
+  bind:this={actionsEl}
   class="grid {gridClassNames} inset-0 absolute bg-black { !areActionsVisible ? 'opacity-[0.0001]' : '' } bg-opacity-60 transition-all">
   {#if isImageValid}
     <button 
       class="select-none text-white hover:text-yellow-400 focus:outline-none"
-      on:click={ copyLink }>
+      on:click={copyLink}>
       <i class="material-icons-round !text-5xl">link</i>
     </button>
     <button 
       class="select-none text-white hover:text-green-500 focus:outline-none"
-      on:click={ () => dispatch('edit') }>
+      on:click={() => dispatch('edit')}>
       <i class="material-icons-round !text-5xl">edit</i>
     </button>
     <button 
       class="select-none text-white hover:text-blue-400 focus:outline-none"
-      on:click={ () => dispatch('expand') }>
+      on:click={() => dispatch('expand')}>
       <i class="material-icons-round !text-5xl">launch</i>
     </button>
   {/if}
   <button 
     class="select-none text-white hover:text-red-500 focus:outline-none"
-    on:click={ removeLink }>
+    on:click={removeLink}>
     <i class="material-icons-round !text-5xl">delete</i>
   </button>
 </div>
