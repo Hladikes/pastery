@@ -46,6 +46,7 @@
     if (areAllLinksSelected) {
       unselectAllLinks()
       deleteAllLinks()
+      isSelectionModeOn.set(false)
     } else {
       $selections.forEach(link => {
         toggleSelection(link)
