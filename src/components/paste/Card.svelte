@@ -37,7 +37,7 @@
 
 <div 
   in:scale={{ duration: 175 }} 
-  class="bg-primary-dark shadow-lg rounded-lg h-56 relative overflow-hidden cursor-pointer">
+  class="bg-primary-dark shadow-lg rounded-lg h-48 relative overflow-hidden cursor-pointer">
   
   {#if isImageValid}
     <div 

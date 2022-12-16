@@ -40,7 +40,7 @@
   <div 
     transition:fade={{ duration: 175 }}
     on:click={ dismiss }
-    class="bg-black bg-opacity-60 fixed inset-0 z-40 pointer-events-all"></div>
+    class="bg-black/70 backdrop-blur-sm fixed inset-0 z-40 pointer-events-all"></div>
 
   <div 
     transition:fade={{ duration: 175 }}
