@@ -9,7 +9,7 @@
 
 <div 
   on:click={() => toggleSelection(link)}
-  class="inset-0 absolute border-4 rounded-lg {selected ? 'border-accent bg-accent bg-opacity-60 backdrop-blur-sm' : 'border-transparent'}">
+  class="inset-0 absolute border-4 rounded-lg {selected ? 'border-accent bg-accent bg-opacity-60' : 'border-transparent'}">
 
   <div class="class-too-long-to-handle {selected ? 'border-accent' : 'border-transparent'}">
     <i class="material-icons-round mt-3 ml-3 {selected ? 'text-accent' : 'text-gray-100/70'}">
