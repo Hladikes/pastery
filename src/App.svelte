@@ -79,7 +79,7 @@
 </script>
 
 <main class="flex flex-col items-center  min-h-screen bg-primary select-none space-y-5">
-  <div class="mt-8 p-4 w-full sm:w-3/5 xl:w-2/5">
+  <div class="mt-8 sm:p-4 p-4 pb-0 w-full sm:w-3/5 xl:w-2/5">
     <h1 class="md:text-7xl text-5xl text-white font-medium select-none">
       <span class="text-accent">Paste</span>ry
     </h1>
@@ -89,10 +89,10 @@
       bind:value={searchKeywords}
       type="text" 
       placeholder="Search"
-      class="bg-secondary/10 text-white border-2 border-transparent md:text-3xl text-2xl font-medium placeholder-gray-300  md:p-5 p-4 w-full  rounded-xl transition-colors focus:outline-none focus:placeholder-white focus:bg-accent/20 focus:border-accent/40">
+      class="bg-secondary/10 text-white border-2 border-transparent md:text-3xl text-2xl font-medium placeholder-gray-300  p-3 sm:p-5 w-full  rounded-xl transition-colors focus:outline-none focus:placeholder-white focus:bg-accent/20 focus:border-accent/40">
   </div>
 
-  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7 gap-4 w-full p-4">
+  <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7 gap-4 w-full sm:p-4 p-4 pt-0">
     {#each searchResults as link (link.id)}
       <Card {link} />  
     {/each}
