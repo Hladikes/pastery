@@ -6,7 +6,7 @@
       <span>With</span>
       <i class="material-icons-round text-red-500  align-middle">favorite</i>  
       <span>Built by</span>
-      <a href="https://github.com/Hladikes" target="_blank" class="text-accent">Hladikes</a>
+      <a href="https://github.com/Hladikes" rel="noreferrer" target="_blank" class="text-accent">Hladikes</a>
     </span>
   </div>
 </footer>
