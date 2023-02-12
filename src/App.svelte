@@ -67,7 +67,13 @@
     // needing to click on a search bar.
     // If the escape key is pressed, the current search query will be erased
     document.addEventListener('keydown', (ev: KeyboardEvent) => {
-      if ($popupVisible || ev.ctrlKey) return
+      if (
+        $popupVisible || 
+        ev.ctrlKey || 
+        ev.key === 'Shift' || 
+        ev.key === 'Enter' || 
+        ev.key === 'Tab'
+      ) return
 
       input?.focus()
 
@@ -99,13 +105,13 @@
   </div>
 
   {#if searchResults.length === 0}
-    <h1 class="text-secondary font-medium select-none opacity-70 text-2xl my-10">Pretty empty here, innit</h1>
+    <h1 class="text-secondary font-medium select-none opacity-70 text-lg sm:text-2xl my-10">Pretty empty here, innit</h1>
     {#if searchKeywords === ''}
-      <h1 class="text-white font-medium text-3xl select-none leading-10 mb-10 px-4 w-full sm:w-3/5 xl:w-2/5">
+      <h1 class="text-white font-medium text-xl sm:text-3xl select-none leading-10 mb-10 px-4 w-full sm:w-3/5 xl:w-2/5">
         <span>To start, just paste the URL link of your mostly used image, with</span>
-        <span class="font-mono text-2xl text-accent p-1.5 bg-accent bg-opacity-10 rounded-lg">Ctrl+V</span>
+        <span class="font-mono text-accent p-1.5 bg-accent bg-opacity-10 rounded-lg">Ctrl+V</span>
         <span>or</span>
-        <span class="font-mono text-2xl text-accent p-1.5 bg-accent bg-opacity-10 rounded-lg">Cmd+V</span>
+        <span class="font-mono text-accent p-1.5 bg-accent bg-opacity-10 rounded-lg">Cmd+V</span>
         <span>on a Mac</span>
       </h1>
     {/if}

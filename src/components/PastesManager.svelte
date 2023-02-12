@@ -63,15 +63,15 @@
 
 {#if $isSelectionModeOn}
   <div 
-    in:fly={{ x: 200 }}
+    in:fly={{ y: -200 }}
     out:fly={{ y: -200 }}
-    class="fixed top-5 right-5 p-4 flex flex-col bg-primary-dark shadow-xl w-96 rounded-xl">
+    class="fixed top-0 right-0 w-full sm:top-5 sm:right-5 sm:w-96 sm:rounded-xl p-4 flex flex-col bg-primary-dark shadow-xl">
     <h1 class="text-white text-opacity-90 text-2xl font-semibold select-none">
       Selected <span class="text-accent">{$selections.size}</span> items
     </h1>
     <div class="flex-1 flex flex-col my-2">
       <button 
-        on:click={ manageAllSelections }
+        on:click={manageAllSelections}
         class="p-2 flex items-center space-x-2 select-none rounded-lg text-white text-opacity-90 hover:text-accent hover:bg-accent hover:bg-opacity-10">
         <i class="material-icons-round">
           {areAllLinksSelected ? 'check_box' : 'check_box_outline_blank'}
