@@ -41,8 +41,9 @@
     }
 
     createConfirm({ title: 'Delete link', text: 'Are you sure you want to delete this paste ?', confirmLabel: 'Yes', cancelLabel: 'No' })
-      .then(yes => {
+      .then((yes) => {
         if (!yes) return
+
         deleteLink(link.id)
         createToast({
           text: 'Paste was deleted', 
@@ -55,27 +56,29 @@
 
 <div 
   bind:this={actionsEl}
-  class="grid {gridClassNames} inset-0 absolute bg-black { !areActionsVisible ? 'opacity-[0.0001]' : '' } bg-opacity-60 transition-all">
-  {#if isImageValid}
+  class="grid {gridClassNames} inset-0 absolute {!areActionsVisible ? 'opacity-[0.0001]' : ''} bg-black bg-opacity-60 transition-all">
+  {#if areActionsVisible}
+    {#if isImageValid}
+      <button 
+        class="select-none text-white hover:text-yellow-400 focus:outline-none"
+        on:click|stopPropagation={copyLink}>
+        <i class="material-icons-round !text-5xl">link</i>
+      </button>
+      <button 
+        class="select-none text-white hover:text-green-500 focus:outline-none"
+        on:click|stopPropagation={() => dispatch('edit')}>
+        <i class="material-icons-round !text-5xl">edit</i>
+      </button>
+      <button 
+        class="select-none text-white hover:text-blue-400 focus:outline-none"
+        on:click|stopPropagation={() => dispatch('expand')}>
+        <i class="material-icons-round !text-5xl">launch</i>
+      </button>
+    {/if}
     <button 
-      class="select-none text-white hover:text-yellow-400 focus:outline-none"
-      on:click={copyLink}>
-      <i class="material-icons-round !text-5xl">link</i>
-    </button>
-    <button 
-      class="select-none text-white hover:text-green-500 focus:outline-none"
-      on:click={() => dispatch('edit')}>
-      <i class="material-icons-round !text-5xl">edit</i>
-    </button>
-    <button 
-      class="select-none text-white hover:text-blue-400 focus:outline-none"
-      on:click={() => dispatch('expand')}>
-      <i class="material-icons-round !text-5xl">launch</i>
+      class="select-none text-white hover:text-red-500 focus:outline-none"
+      on:click|stopPropagation={removeLink}>
+      <i class="material-icons-round !text-5xl">delete</i>
     </button>
   {/if}
-  <button 
-    class="select-none text-white hover:text-red-500 focus:outline-none"
-    on:click={removeLink}>
-    <i class="material-icons-round !text-5xl">delete</i>
-  </button>
 </div>
