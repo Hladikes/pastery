@@ -1,29 +1,25 @@
 {
-  "name": "vite-svelte-tailwind-ts",
+  "name": "pastery",
+  "private": true,
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "dev": "vite --host",
+    "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview",
-    "check": "svelte-check --tsconfig ./tsconfig.json",
-    "lint": "eslint src/**/*.ts src/**/*.svelte",
-    "lint:fix": "eslint --fix src/**/*.ts src/**/*.svelte"
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.47",
+    "@sveltejs/vite-plugin-svelte": "^2.0.3",
     "@tsconfig/svelte": "^3.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.27.0",
-    "@typescript-eslint/parser": "^5.27.0",
-    "autoprefixer": "^10.4.7",
-    "eslint": "^8.16.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "postcss": "^8.4.14",
+    "@types/node": "^18.15.11",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.22",
     "svelte": "^3.55.1",
-    "svelte-check": "^2.7.2",
-    "svelte-preprocess": "^4.10.6",
-    "tailwindcss": "^3.0.24",
-    "tslib": "^2.4.0",
-    "typescript": "^4.7.2",
-    "vite": "^4.1.1"
+    "svelte-check": "^2.10.3",
+    "tailwindcss": "^3.3.1",
+    "tslib": "^2.5.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.2.0"
   }
 }
