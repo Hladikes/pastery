@@ -62,14 +62,6 @@ export const deleteAllLinks = (): void => {
 
 // Not the most efficient way to change only one link object
 export const updateKeywords = (id: string, keywords: string): void => {
-  // links.update((currentLinks) => currentLinks.map((link) => {
-  //   if (link.id === id) {
-  //     Object.assign(link, { keywords })
-  //   }
-
-  //   return link
-  // }))
-
   links.update((currentLinks) => {
     const foundItem = currentLinks.find((item) => item.id === id)
 
