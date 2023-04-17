@@ -71,12 +71,12 @@ export const updateKeywords = (id: string, keywords: string): void => {
   // }))
 
   links.update((currentLinks) => {
-    const foundItem = currentLinks.find(item => item.id === id)
+    const foundItem = currentLinks.find((item) => item.id === id)
 
     if (foundItem) {
       foundItem.keywords = keywords
     }
-    
+
     return currentLinks
   })
 }
