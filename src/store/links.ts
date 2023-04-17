@@ -42,11 +42,13 @@ export const addLink = (url: string, keywords: string = ''): void => {
       return currentLinks
     }
 
-    return [{
-      id: randomId(),
-      url,
-      keywords,
-    }, ...currentLinks]
+    return [
+      {
+        id: randomId(),
+        url,
+        keywords,
+      }, ...currentLinks,
+    ]
   })
 
   return null
