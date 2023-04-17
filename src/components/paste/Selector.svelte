@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { toggleSelection, selections } from '@/store/selection'
   import type { Link } from '@/store/links'
+  import { selections, toggleSelection } from '@/store/selection'
 
   export let link: Link = null
 

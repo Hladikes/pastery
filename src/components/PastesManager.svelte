@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { fly, scale } from 'svelte/transition'
-  import { isSelectionModeOn, selectAllLinks, selections, toggleSelection, unselectAllLinks } from '@/store/selection'
-  import { links, deleteAllLinks, deleteLink } from '@/store/links'
-  import { createToast } from '@/plugins/toast/Toast.svelte'
   import { copy } from '@/plugins/clipboard'
   import { createConfirm } from '@/plugins/confirm/Confirm.svelte'
+  import { createToast } from '@/plugins/toast/Toast.svelte'
+  import { deleteAllLinks, deleteLink, links } from '@/store/links'
+  import { isSelectionModeOn, selectAllLinks, selections, toggleSelection, unselectAllLinks } from '@/store/selection'
+  import { fly, scale } from 'svelte/transition'
 
   $: areAllLinksSelected = $links.length === $selections.size
 

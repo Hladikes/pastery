@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { createEventDispatcher, onMount } from 'svelte'
   import { copy } from '@/plugins/clipboard'
+  import { createConfirm } from '@/plugins/confirm/Confirm.svelte'
   import { createToast } from '@/plugins/toast/Toast.svelte'
   import { handlePressStateChanges } from '@/plugins/touchable'
-  import { deleteLink } from '@/store/links'
-  import { createConfirm } from '@/plugins/confirm/Confirm.svelte'
   import type { Link } from '@/store/links'
+  import { deleteLink } from '@/store/links'
+  import { createEventDispatcher, onMount } from 'svelte'
   
   export let link: Link = null
   export let isImageValid: boolean = true

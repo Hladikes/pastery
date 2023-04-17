@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { copy } from '@/plugins/clipboard';
+  import { copy } from '@/plugins/clipboard'
   import { getCachedImage } from '@/plugins/imageCache'
   import Popup from '@/plugins/popup/Popup.svelte'
-  import { createToast } from '@/plugins/toast/Toast.svelte';
+  import { createToast } from '@/plugins/toast/Toast.svelte'
   import type { Link } from '@/store/links'
   import { isSelectionModeOn, toggleSelection } from '@/store/selection'
   import { onMount } from 'svelte'

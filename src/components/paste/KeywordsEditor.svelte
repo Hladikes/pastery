@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { onMount } from 'svelte'
-  import { updateKeywords } from '@/store/links'
   import { createToast } from '@/plugins/toast/Toast.svelte'
   import type { Link } from '@/store/links'
+  import { updateKeywords } from '@/store/links'
+  import { onMount } from 'svelte'
 
   export let link: Link = null
 

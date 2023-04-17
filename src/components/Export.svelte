@@ -6,9 +6,9 @@
 </button>
 
 <script lang="ts">
+  import { copy } from '@/plugins/clipboard'
   import { createToast } from '@/plugins/toast/Toast.svelte'
   import { links } from '@/store/links'
-  import { copy } from '@/plugins/clipboard'
 
   const exportLinks = () => {
     createToast({ 
